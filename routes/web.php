@@ -11,6 +11,11 @@
 |
 */
 
+//Route::get(どのURL、何をするか);
+// どのURL、何をするのか決めるのが（ルーティング）の仕事
 Route::get('/', function () {
+    //関数viewはresources/viewの中身を返す
     return view('welcome');
 });
+
+//↑ 
