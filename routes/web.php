@@ -18,4 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//↑ 
+//↑
+
+//urlを作成
+Route::get('/list', 'TaskController@index');
+Route::get('/comment', 'CommentController@index');
+Route::get('followers','FollowerController@index');
+Route::get('/tasks/create', 'TaskController@create');
+Route::post('/tasks/store', 'TaskController@store');
