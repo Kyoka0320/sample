@@ -11,7 +11,7 @@
         {{-- これを入れないと４１９のエラーが出る --}}
         @csrf
         {{-- tel のみだと反映されないからname属性をつける --}}
-        <input type="tel" name="tel" value="{{ old('tel') }}">
+        <input type="tel" name="tel" value="{{ old('tel', $task->tel) }}">
         @error('tel')
           {{ $message }}
         @enderror

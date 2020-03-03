@@ -26,3 +26,7 @@ Route::get('/comment', 'CommentController@index');
 Route::get('followers','FollowerController@index');
 Route::get('/tasks/create', 'TaskController@create');
 Route::post('/tasks/store', 'TaskController@store');
+
+// 編集画面を決めるための
+// {] IDが入るから
+Route::get('/tasks/{id}/edit', 'TaskController@edit');

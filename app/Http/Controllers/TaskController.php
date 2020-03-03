@@ -45,6 +45,25 @@ class TaskController extends Controller
         // このスラッシュはあってもなくてもいい
         return redirect()->to('/list');
     }
+
+    public function edit(int $id){
+
+        // 編集対象のデータを取得する
+        $task = Task::find($id);
+        //dd($task->tel, $id);
+
+
+        // 編集画面を表示する
+        // tasks フォルダに　edit.blade.phpを作る
+        // taskとはモデルから持ってきたデータ
+        return view('tasks.edit', compact('task'));
+
+        // tasks/edit.blade.php
+        // $taskは渡す
+        // create.blade.phpをコピーでOK
+
+
+    }
 }
 
 
