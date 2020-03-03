@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="{{ url('tasks/store') }}" method="POST">
+    <form action="{{ route('tasks.update',['id' => $task->id]) }}" method="POST">
+        @method('put')
         {{-- これを入れないと４１９のエラーが出る --}}
         @csrf
         {{-- tel のみだと反映されないからname属性をつける --}}

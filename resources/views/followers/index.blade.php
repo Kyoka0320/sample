@@ -4,5 +4,6 @@
 <p>{{ $follower-> tel }}</p>
 <p>{{ $follower-> created_at }}</p>
 
+
 @endforeach
 

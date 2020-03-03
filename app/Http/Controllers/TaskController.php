@@ -64,6 +64,26 @@ class TaskController extends Controller
 
 
     }
+
+    public function update(Request $request, int $id){
+
+        // 更新する対象のデータを取得
+        // findでデータを一つだけ取得できる
+        $task = Task::find($id);
+        //dd($request->input('tel'));
+        //dd($request->tel);
+        // 同じ結果が出る
+
+        // 更新
+        $task->update([
+            'tel' => $request->tel,
+        ]);
+
+        // 一覧画面に戻る
+            return redirect()->to('/list');
+
+        dd($request->all(), $id);
+    }
 }
 
 

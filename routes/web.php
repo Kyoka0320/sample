@@ -29,4 +29,8 @@ Route::post('/tasks/store', 'TaskController@store');
 
 // 編集画面を決めるための
 // {] IDが入るから
-Route::get('/tasks/{id}/edit', 'TaskController@edit');
+Route::get('/tasks/{id}/edit', 'TaskController@edit')->name('tasks.edit');
+
+// taskからupdateを呼ばれる
+//
+Route::put('/tasks/{id}/update','TaskController@update')->name('tasks.update');

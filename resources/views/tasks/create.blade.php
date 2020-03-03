@@ -8,6 +8,7 @@
 </head>
 <body>
     <form action="{{ url('tasks/store') }}" method="POST">
+
         {{-- これを入れないと４１９のエラーが出る --}}
         @csrf
         {{-- tel のみだと反映されないからname属性をつける --}}
