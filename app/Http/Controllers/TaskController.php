@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateTask;
+use App\Http\Requests\UpdateTask;
+// use === このクラスを使います
 use App\Task;
 
 class TaskController extends Controller
@@ -65,7 +67,7 @@ class TaskController extends Controller
 
     }
 
-    public function update(Request $request, int $id){
+    public function update(UpdateTask $request, int $id){
 
         // 更新する対象のデータを取得
         // findでデータを一つだけ取得できる
@@ -83,6 +85,22 @@ class TaskController extends Controller
             return redirect()->to('/list');
 
         dd($request->all(), $id);
+    }
+    // int　とは　ここには数字さしか入ってはいけないなどの条件
+    public function delete(int $id){
+
+
+        // 選択されたデータの取得
+        // $id の数字はデータの数字
+        $task = Task::find($id);
+        //dd($task);
+
+        // 選択されたデータの削除
+        $task->delete();
+
+        // 一覧画面に戻る
+        return redirect()->to('/list');
+
     }
 }
 

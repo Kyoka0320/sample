@@ -34,3 +34,5 @@ Route::get('/tasks/{id}/edit', 'TaskController@edit')->name('tasks.edit');
 // taskからupdateを呼ばれる
 //
 Route::put('/tasks/{id}/update','TaskController@update')->name('tasks.update');
+
+Route::delete('/tasks/{id}/delete', 'TaskController@delete')->name('tasks.delete');
