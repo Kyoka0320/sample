@@ -48,10 +48,10 @@ class TaskController extends Controller
         return redirect()->to('/list');
     }
 
-    public function edit(int $id){
+    public function edit(Task $task){
 
         // 編集対象のデータを取得する
-        $task = Task::find($id);
+        // $task = Task::find($id);
         //dd($task->tel, $id);
 
 
@@ -67,11 +67,11 @@ class TaskController extends Controller
 
     }
 
-    public function update(UpdateTask $request, int $id){
+    public function update(UpdateTask $request, Task $task){
 
         // 更新する対象のデータを取得
         // findでデータを一つだけ取得できる
-        $task = Task::find($id);
+        // $task = Task::find($id);
         //dd($request->input('tel'));
         //dd($request->tel);
         // 同じ結果が出る
@@ -87,12 +87,12 @@ class TaskController extends Controller
         dd($request->all(), $id);
     }
     // int　とは　ここには数字さしか入ってはいけないなどの条件
-    public function delete(int $id){
+    public function delete(Task $task){
 
 
         // 選択されたデータの取得
         // $id の数字はデータの数字
-        $task = Task::find($id);
+        // $task = Task::find($id);
         //dd($task);
 
         // 選択されたデータの削除
