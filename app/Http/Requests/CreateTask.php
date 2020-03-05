@@ -30,7 +30,8 @@ class CreateTask extends FormRequest
         return [
             // 対象の入力欄　=> 条件
             // numeric は数字だけという意味
-            'tel' => ['required' , 'numeric'],
+            // tel とはタスクで作った時のカラム名（送信元）
+            'body' => ['required' , 'numeric'],
         ];
     }
 }
